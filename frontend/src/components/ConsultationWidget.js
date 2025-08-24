@@ -11,11 +11,11 @@ const ConsultationWidget = () => {
       <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50">
         <button
           onClick={() => setIsOpen(true)}
-          className="w-16 h-16 bg-lime-400 hover:bg-lime-500 rounded-full flex items-center justify-center text-black transition-all duration-300 hover:scale-110 shadow-lg"
+          className="w-16 h-16 bg-lime-400 hover:bg-lime-500 rounded-full flex items-center justify-center text-black transition-all duration-300 hover:scale-110 shadow-lg consultation-pulse"
         >
-          <MessageCircle size={24} />
+          <span className="text-xs font-semibold">?</span>
         </button>
-        <div className="text-black text-xs font-medium mt-2 text-center">
+        <div className="text-black text-xs font-medium mt-2 text-center max-w-20">
           Онлайн консультация
         </div>
       </div>
