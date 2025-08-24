@@ -24,7 +24,7 @@ export const modulesData = [
     title: "МОДУЛЬ ЧАЕВЫЕ",
     description: "Гости оставляют чаевые по QR. Персонал замотивирован, выручка растёт.",
     highlight: "До +80% больше чаевых.",
-    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=300&fit=crop&crop=face",
+    image: "https://images.unsplash.com/photo-1571867424488-4565932edb41?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwxfHxRUiUyMHBheW1lbnR8ZW58MHx8fHwxNzU2MDYyMDM0fDA&ixlib=rb-4.1.0&q=85",
     hasGradientBorder: true
   },
   {
@@ -45,7 +45,7 @@ export const modulesData = [
     title: "МОДУЛЬ ОФИЦИАНТ",
     description: "Официант оформляет заказ в 2 клика. Видео, допы, без ошибок — обслуживание быстрее.",
     highlight: "Средний чек растёт стабильно.",
-    image: null,
+    image: "https://images.unsplash.com/photo-1512485800893-b08ec1ea59b1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwc3RhZmZ8ZW58MHx8fHwxNzU2MDYyMDI4fDA&ixlib=rb-4.1.0&q=85",
     hasGradientBorder: true
   },
   {
@@ -66,7 +66,7 @@ export const modulesData = [
     title: "МОДУЛЬ ДОСТАВКА",
     description: "Гости заказывают с вашего сайта — без комиссий, агрегаторов и лишней нагрузки.",
     highlight: "Зарабатываете на 30–50% больше, чем с агрегаторами.",
-    image: null,
+    image: "https://images.unsplash.com/photo-1592861956120-e524fc739696?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwyfHxyZXN0YXVyYW50JTIwZGluaW5nfGVufDB8fHx8MTc1NjA2MjAyMnww&ixlib=rb-4.1.0&q=85",
     hasGradientBorder: true
   },
   {
