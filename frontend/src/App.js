@@ -61,7 +61,9 @@ function App() {
         </div>
       </main>
 
+      <Footer />
       <ConsultationWidget />
+      <FloatingContactButtons />
     </div>
   );
 }
