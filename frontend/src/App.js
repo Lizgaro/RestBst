@@ -4,6 +4,8 @@ import Header from './components/Header';
 import ModuleTabs from './components/ModuleTabs';
 import ModuleCard from './components/ModuleCard';
 import ConsultationWidget from './components/ConsultationWidget';
+import Footer from './components/Footer';
+import FloatingContactButtons from './components/FloatingContactButtons';
 import { modulesData } from './data/mockData';
 
 function App() {
