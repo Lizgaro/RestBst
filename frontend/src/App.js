@@ -44,13 +44,15 @@ function App() {
                 highlight={module.highlight}
                 image={module.image}
                 hasGradientBorder={module.hasGradientBorder}
+                onClick={() => handleModuleClick(moduleKeys[index])}
               />
             ))}
           </div>
           
           {/* Gift section */}
-          <div className="mt-16 bg-gradient-to-r from-lime-400/10 to-lime-400/20 border border-lime-400/30 rounded-2xl p-8 text-center">
-            <div className="text-lime-400 text-sm font-medium mb-2">Подарок</div>
+          <div className="mt-16 bg-gradient-to-r from-lime-400/10 to-lime-400/20 border border-lime-400/30 rounded-2xl p-8 text-center hover:scale-105 transition-transform duration-500 cursor-pointer"
+               onClick={() => window.open(contactData.telegramLink, '_blank')}>
+            <div className="text-lime-400 text-sm font-medium mb-2">🎁 Подарок</div>
             <h3 className="text-white text-3xl font-bold mb-4">Получите 5 000 ₽</h3>
             <p className="text-white text-xl mb-6">на запуск мечты</p>
             
@@ -70,6 +72,7 @@ function App() {
             </div>
             
             <p className="text-gray-400 text-sm mb-6">Скидка действует 5 дней. Мы свяжемся после заявки.</p>
+            <p className="text-lime-400 font-semibold">👆 Нажмите, чтобы получить подарок в Telegram</p>
           </div>
         </div>
       </main>
@@ -77,6 +80,14 @@ function App() {
       <Footer />
       <ConsultationWidget />
       <FloatingContactButtons />
+      
+      {/* Module Detail Modal */}
+      {selectedModule && (
+        <ModuleDetailModal 
+          module={selectedModule} 
+          onClose={() => setSelectedModule(null)} 
+        />
+      )}
     </div>
   );
 }
