@@ -225,6 +225,21 @@ frontend:
           agent: "testing"
           comment: "Minor: Images load correctly (4 images found including Unsplash images for module cards). Hover effects work on module cards but had timeout issues on navigation links due to modal overlay interference - this is a minor UI issue that doesn't affect core functionality."
 
+  - task: "Enhanced functionality with Andrey Sidorov contacts"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/data/contactData.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: "NA"
+          agent: "testing"
+          comment: "Testing enhanced functionality with updated contact information for Andrey Sidorov"
+        - working: true
+          agent: "testing"
+          comment: "✅ PASSED: All enhanced functionality verified successfully. Found 11 'Подробнее' buttons that open modals with Andrey Sidorov's contact information (+7-902-705-14-55, andresidorov@bk.ru, @Andre_Sidorov). All contact buttons in modals work correctly (phone, email, WhatsApp, Telegram). Consultation widget updated with new contact data and functions properly. Floating contact buttons lead to correct links. Gift section is clickable and leads to Telegram. Footer updated with new contacts. Header buttons working with proper lime green styling. Smooth animations and hover effects verified. Responsive design works on desktop, tablet, and mobile views."
+
 metadata:
   created_by: "testing_agent"
   version: "1.0"
