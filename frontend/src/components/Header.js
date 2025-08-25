@@ -8,10 +8,6 @@ const Header = ({ currentPage, setCurrentPage }) => {
     window.open(contactData.telegramLink, '_blank');
   };
 
-  const handleLogin = () => {
-    window.open(`mailto:${contactData.email}?subject=Вход в систему RestBest`, '_blank');
-  };
-
   return (
     <header className="bg-black border-b border-gray-800 px-6 py-4 sticky top-0 z-40 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -73,14 +69,6 @@ const Header = ({ currentPage, setCurrentPage }) => {
           >
             <Phone size={16} className="mr-2" />
             Запустить бесплатно
-          </Button>
-          <Button 
-            onClick={handleLogin}
-            variant="outline" 
-            className="border-gray-600 text-white hover:bg-lime-400 hover:text-black hover:border-lime-400 px-4 py-2 rounded-full transition-all duration-300 hover:scale-105"
-          >
-            <User size={16} className="mr-2" />
-            Войти
           </Button>
         </div>
       </div>
