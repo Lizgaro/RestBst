@@ -8,11 +8,11 @@
   display: none;
 }
 
-/* Smooth transitions for all interactive elements */
+/* Enhanced smooth transitions for all interactive elements */
 * {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+  transition-duration: 300ms;
 }
 
 /* Custom gradient animations */
@@ -34,6 +34,35 @@
   }
 }
 
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(197, 250, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(197, 250, 0, 0.6);
+  }
+}
+
+@keyframes slide-in-from-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .animate-gradient-x {
   animation: gradient-x 3s ease infinite;
   background-size: 200% 200%;
@@ -43,61 +72,143 @@
   animation: float 3s ease-in-out infinite;
 }
 
-/* Custom button hover effects */
-.btn-glow:hover {
-  box-shadow: 0 0 20px rgba(197, 250, 0, 0.5);
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
 }
 
-/* Module card hover animations */
+.animate-in {
+  animation-fill-mode: both;
+}
+
+.fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.slide-in-from-bottom {
+  animation: slide-in-from-bottom 0.5s ease-out;
+}
+
+/* Enhanced button hover effects */
+.btn-glow:hover {
+  box-shadow: 0 0 25px rgba(197, 250, 0, 0.5), 0 0 50px rgba(197, 250, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Enhanced module card animations */
 .module-card {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
 }
 
 .module-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px -12px rgba(197, 250, 0, 0.15);
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 
+    0 25px 50px -12px rgba(197, 250, 0, 0.2),
+    0 0 30px rgba(197, 250, 0, 0.1);
 }
 
-/* Consultation widget pulse animation */
+/* Consultation widget enhanced pulse */
 .consultation-pulse {
-  animation: pulse 2s infinite;
+  animation: pulse-glow 2s infinite;
 }
 
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.8;
-  }
-}
-
-/* Glass morphism effect */
+/* Glass morphism effect enhanced */
 .glass-effect {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
 }
 
-/* Custom focus states */
+.glass-effect:hover {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+}
+
+/* Enhanced focus states */
 button:focus,
 input:focus,
 textarea:focus {
   outline: 2px solid rgba(197, 250, 0, 0.5);
   outline-offset: 2px;
+  transform: scale(1.02);
 }
 
-/* Smooth scrolling */
+/* Smooth scrolling enhanced */
 html {
   scroll-behavior: smooth;
 }
 
-/* Text gradient effect for highlights */
+/* Text gradient effect for highlights enhanced */
 .text-gradient {
-  background: linear-gradient(45deg, #c5fa00, #84cc16);
+  background: linear-gradient(45deg, #c5fa00, #84cc16, #65a30d);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-size: 200% 200%;
-  animation: gradient-x 3s ease infinite;
+  background-size: 300% 300%;
+  animation: gradient-x 4s ease infinite;
+}
+
+/* Loading spinner for interactions */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Hover lift effect for cards */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Stagger animation for lists */
+@keyframes stagger-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-in {
+  animation: stagger-in 0.6s ease-out;
+}
+
+/* Enhanced button ripple effect */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-ripple:active::before {
+  width: 300px;
+  height: 300px;
 }
