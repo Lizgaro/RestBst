@@ -1,0 +1,33 @@
+Hello! It looks like my messages are not working well.
+I am putting the instructions in this file instead.
+
+You are very close! The problem was just a small typo in the folder name.
+
+Please open your PowerShell terminal and run these commands one by one.
+
+------------------------------------------------------------------
+
+1. This command will take you to the correct folder for the frontend code. Copy it exactly.
+
+cd C:\Users\lizga\Desktop\RestBst\frontend
+
+------------------------------------------------------------------
+
+2. This command will install all the necessary code packages.
+
+npm install
+
+------------------------------------------------------------------
+
+3. This is the final command. It will build the website for deployment.
+
+npm run build
+
+------------------------------------------------------------------
+
+After these three steps are done without errors, you can go to the Netlify website and follow their instructions to deploy your site.
+
+You will tell Netlify to use this "Publish directory":
+C:\Users\lizga\Desktop\RestBst\frontend\build
+
+Good luck!
