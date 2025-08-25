@@ -1,0 +1,32 @@
+Hello! Please follow these steps to build the project.
+
+*** IMPORTANT ***
+Open your terminal (PowerShell) and run these commands ONE BY ONE.
+Press Enter after each command.
+
+------------------------------------------------------------------
+
+STEP 1: Go to the correct project folder.
+Please copy and paste this full command into your terminal:
+
+cd C:\Users\lizga\Desktop\RestB\RestBst\frontend
+
+------------------------------------------------------------------
+
+STEP 2: Install the necessary packages.
+(This might take a minute or two)
+
+npm install
+
+------------------------------------------------------------------
+
+STEP 3: Create the production build.
+This is the final command before you go to Netlify.
+
+npm run build
+
+------------------------------------------------------------------
+
+After Step 3 is successful, you can go to the Netlify website and follow the deployment instructions I sent earlier.
+
+If you get an error on any step, please send me a screenshot of the terminal.
