@@ -2,6 +2,7 @@ import React from 'react';
 import { Check, Star, Lightbulb, ChevronDown } from 'lucide-react';
 import { Button } from './ui/button';
 import { contactData } from '../data/contactData';
+import Features from './Features';
 
 const PricingPage = () => {
   const handleContactClick = () => {
@@ -193,6 +194,8 @@ const PricingPage = () => {
           ))}
         </div>
       </div>
+
+      <Features />
 
       {/* Comparison Table */}
       <div className="max-w-6xl mx-auto px-6 py-16">
