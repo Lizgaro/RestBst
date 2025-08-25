@@ -1,77 +1,90 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-
+import AnimatedInView from './AnimatedInView';
 const featuresData = [
   {
     title: "модуль МЕНЮ",
     description: "Меню, от которого не отрываются. Гость выбирает глазами. Выручка растёт.",
-    link: "https://promo.restbest.pro/features/modulmenu/"
+    path: "/features/menu",
+    image: "https://promo.restbest.pro/wp-content/uploads/2025/04/rest10.png"
   },
   {
     title: "модуль ЗАКАЗ",
     description: "Больше заказов — меньше нагрузки. Гость всё делает сам. Вы зарабатываете больше.",
-    link: "https://promo.restbest.pro/features/modul-zakaz/"
+    path: "/features/order",
+    image: "https://promo.restbest.pro/wp-content/uploads/2025/04/rest5.jpg"
   },
   {
     title: "модуль СЧЕТ",
     description: "Гость оплачивает сам — быстро и удобно. Вы зарабатываете быстрее и больше.",
-    link: "https://promo.restbest.pro/features/modul-schet/"
+    path: "/features/bill",
+    image: "https://promo.restbest.pro/wp-content/uploads/2025/04/rest13.png"
   },
   {
     title: "модуль ЧАЕВЫЕ",
-    description: "Гости оставляют чаевые по QR. Персонал замотивирован, выручка растёт. До +80% больше чаевых.",
-    link: "https://promo.restbest.pro/features/modul-chaevye/"
+    description: "Гости оставляют чаевые по QR. Персонал замотивирован, выручка растёт.",
+    path: "/features/tips",
+    image: "https://promo.restbest.pro/wp-content/uploads/2025/04/rest33.jpg"
   },
   {
     title: "модуль МОДИФИКАТОРЫ",
-    description: "Гость сам добавляет гарниры и соусы. Система продаёт допы без участия персонала. Рост выручки без усилий.",
-    link: "https://promo.restbest.pro/features/modul-modifikator/"
+    description: "Гость сам добавляет гарниры и соусы. Система продаёт допы без участия персонала.",
+    path: "/features/modifiers",
+    image: "https://promo.restbest.pro/wp-content/uploads/2025/04/rest51.jpg"
   },
   {
     title: "модуль ВЫЗОВ",
-    description: "Гость сам вызывает нужного сотрудника через QR — быстро, без лишних движений. Официанты обслуживают на 30% больше гостей.",
-    link: "https://promo.restbest.pro/features/modul-vyzov/"
+    description: "Гость сам вызывает нужного сотрудника через QR — быстро, без лишних движений.",
+    path: "/features/call",
+    image: "https://promo.restbest.pro/wp-content/uploads/2025/04/rest61.jpg"
   },
   {
     title: "модуль ОФИЦИАНТ",
-    description: "Официант оформляет заказ в 2 клика. Видео, допы, без ошибок — обслуживание быстрее. Средний чек растёт стабильно.",
-    link: "https://promo.restbest.pro/features/modul-ofitsiant/"
+    description: "Официант оформляет заказ в 2 клика. Видео, допы, без ошибок — обслуживание быстрее.",
+    path: "/features/waiter",
+    image: "https://promo.restbest.pro/wp-content/uploads/2025/04/rest71.jpg"
   },
   {
     title: "модуль АКЦИИ",
-    description: "Система сама предлагает бонусы и подарки. Вы управляете акциями за пару кликов. Средний чек растёт без затрат.",
-    link: "https://promo.restbest.pro/features/modul-aktsii/"
+    description: "Система сама предлагает бонусы и подарки. Вы управляете акциями за пару кликов.",
+    path: "/features/promotions",
+    image: "https://promo.restbest.pro/wp-content/uploads/2025/04/rest82.jpg"
   },
   {
     title: "модуль ИНТЕГРАЦИИ",
-    description: "iiko, R-Keeper, СБИС, CloudPayments, CloudTips, Telegram – всё работает как единая система. Без ручного ввода и дублирования.",
-    link: "https://promo.restbest.pro/features/modul-integratsii/"
+    description: "iiko, R-Keeper, СБИС, CloudPayments, CloudTips, Telegram – всё работает как единая система.",
+    path: "/features/integrations",
+    image: "https://promo.restbest.pro/wp-content/uploads/2025/04/rest95.jpg"
   },
   {
     title: "модуль ДОСТАВКА",
-    description: "Гости заказывают с вашего сайта — без комиссий, агрегаторов и лишней нагрузки. Зарабатываете на 30–50% больше, чем с агрегаторами.",
-    link: "https://promo.restbest.pro/features/modul-dostavka/"
+    description: "Гости заказывают с вашего сайта — без комиссий, агрегаторов и лишней нагрузки.",
+    path: "/features/delivery",
+    image: "https://promo.restbest.pro/wp-content/uploads/2025/04/res111.jpg"
   },
   {
     title: "модуль ОТЧЕТЫ",
-    description: "Вся выручка, заказы и работа команды — в Telegram. Контроль без таблиц и ожиданий. Решения, которые сразу дают прибыль.",
-    link: "https://promo.restbest.pro/features/modul-otchety/"
+    description: "Вся выручка, заказы и работа команды — в Telegram. Контроль без таблиц и ожиданий.",
+    path: "/features/reports",
+    image: "https://promo.restbest.pro/wp-content/uploads/2025/04/12-1.jpg"
   }
 ];
 
-const FeatureCard = ({ title, description, link }) => (
-  <div className="bg-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-lime-400/50 transition-all duration-300 transform hover:-translate-y-2">
-    <h3 className="text-xl font-semibold mb-4 text-lime-400 uppercase">{title}</h3>
-    <p className="text-gray-300 leading-relaxed mb-6">{description}</p>
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-white font-semibold hover:text-lime-400 transition-colors duration-300 flex items-center group"
-    >
-      Подробнее
-      <ArrowRight size={16} className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-    </a>
+const FeatureCard = ({ title, description, path, image }) => (
+  <div className="bg-gray-900 rounded-2xl border border-gray-800 hover:border-lime-400/50 transition-all duration-300 transform hover:-translate-y-2 flex flex-col overflow-hidden">
+    <img src={image} alt={title} className="w-full h-48 object-cover" />
+    <div className="p-6 flex flex-col flex-grow">
+      <h3 className="text-xl font-semibold mb-3 text-lime-400 uppercase">{title}</h3>
+      <p className="text-gray-400 leading-relaxed mb-4 flex-grow">{description}</p>
+      <Link
+        to={path}
+        className="text-white font-semibold hover:text-lime-400 transition-colors duration-300 flex items-center group mt-auto"
+      >
+        Подробнее
+        <ArrowRight size={16} className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      </Link>
+    </div>
   </div>
 );
 
@@ -84,32 +97,22 @@ const Features = () => {
             Возможности
           </h2>
           <div className="flex justify-center space-x-4 text-gray-400">
-            {featuresData.slice(0, 5).map((feature, index) => (
-              <a key={index} href={feature.link} target="_blank" rel="noopener noreferrer" className="hover:text-lime-400 transition-colors">{feature.title}</a>
+            {featuresData.slice(0, 6).map((feature, index) => (
+              <Link key={index} to={feature.path} className="hover:text-lime-400 transition-colors text-sm">{feature.title}</Link>
             ))}
           </div>
            <div className="flex justify-center space-x-4 text-gray-400 mt-2">
-            {featuresData.slice(5, 11).map((feature, index) => (
-              <a key={index} href={feature.link} target="_blank" rel="noopener noreferrer" className="hover:text-lime-400 transition-colors">{feature.title}</a>
+            {featuresData.slice(6).map((feature, index) => (
+              <Link key={index} to={feature.path} className="hover:text-lime-400 transition-colors text-sm">{feature.title}</Link>
             ))}
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featuresData.slice(0, 3).map((feature, index) => (
-            <FeatureCard key={index} {...feature} />
-          ))}
-
-          <div className="lg:col-span-1 md:col-span-2 rounded-2xl overflow-hidden">
-            <img
-              src="https://promo.restbest.pro/wp-content/uploads/2025/06/modulvozmozhnosti.png"
-              alt="Waiter with QR code"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          {featuresData.slice(3).map((feature, index) => (
-            <FeatureCard key={index} {...feature} />
+          {featuresData.map((feature, index) => (
+            <AnimatedInView key={index} delay={index * 0.1}>
+              <FeatureCard {...feature} />
+            </AnimatedInView>
           ))}
         </div>
       </div>

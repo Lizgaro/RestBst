@@ -38,18 +38,18 @@ const Header = () => {
           
           {/* Navigation */}
           <nav className="flex items-center space-x-6 text-sm">
-            <NavLink to="/" end className={navLinkClass}>
-              {({ isActive }) => (
-                <>
-                  Цены
-                  {activeLinkIndicator(isActive)}
-                </>
-              )}
-            </NavLink>
             <NavLink to="/qr-menu" className={navLinkClass}>
               {({ isActive }) => (
                 <>
                   QR/NFC-меню
+                  {activeLinkIndicator(isActive)}
+                </>
+              )}
+            </NavLink>
+            <NavLink to="/" end className={navLinkClass}>
+              {({ isActive }) => (
+                <>
+                  Цены
                   {activeLinkIndicator(isActive)}
                 </>
               )}
