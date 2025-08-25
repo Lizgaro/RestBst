@@ -13,6 +13,16 @@ import { contactData } from './data/contactData';
 
 function App() {
   const [activeModule, setActiveModule] = useState(0);
+  const [selectedModule, setSelectedModule] = useState(null);
+
+  const handleModuleClick = (moduleKey) => {
+    const moduleDetail = moduleDetailsData[moduleKey];
+    if (moduleDetail) {
+      setSelectedModule(moduleDetail);
+    }
+  };
+
+  const moduleKeys = ['menu', 'order', 'payment', 'tips', 'modifiers', 'call', 'waiter', 'promotions', 'integrations', 'delivery', 'reports'];
 
   return (
     <div className="min-h-screen bg-black">
