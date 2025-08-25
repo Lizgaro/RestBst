@@ -3,10 +3,13 @@ import './App.css';
 import Header from './components/Header';
 import ModuleTabs from './components/ModuleTabs';
 import ModuleCard from './components/ModuleCard';
+import ModuleDetailModal from './components/ModuleDetailModal';
 import ConsultationWidget from './components/ConsultationWidget';
 import Footer from './components/Footer';
 import FloatingContactButtons from './components/FloatingContactButtons';
 import { modulesData } from './data/mockData';
+import { moduleDetailsData } from './data/moduleDetailsData';
+import { contactData } from './data/contactData';
 
 function App() {
   const [activeModule, setActiveModule] = useState(0);
